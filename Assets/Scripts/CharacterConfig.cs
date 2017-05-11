@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class CharacterConfig : ScriptableObject
 {
-    public string characterName;
+    public string chracterName;
     public int health;
 
-    public Backpack backpack;    
+    public Inventory inventory;
 }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ItemConfig", menuName = "ItemConfig")]
+[CreateAssetMenu(fileName = "scriptableItem", menuName = "itemConfig")]
 
 public class ItemConfig : ScriptableObject
 {
     public string itemName;
-    public string itemID;
+    public float itemID;
     public float weight;
 }

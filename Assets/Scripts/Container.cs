@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public class Container : MonoBehaviour
 {
-    public CharacterConfig characterConfig;
+    public ContainerConfig containerConfig;
 
     // Use this for initialization
     void Start ()
