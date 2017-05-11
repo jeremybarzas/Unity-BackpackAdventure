@@ -8,10 +8,5 @@ public class Item : MonoBehaviour {
     public float weight;
 }
 
-public class Consumable : Item{
-    public bool ammo;
-    public bool potion;
-    public int maxStackSize;
-    public int currentStackSize;
-}
+
 
