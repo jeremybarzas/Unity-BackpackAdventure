@@ -9,5 +9,5 @@ public class CharacterConfig : ScriptableObject
     public string characterName;
     public int health;
 
-    public Backpack backpack;    
+    public BackpackBehaviour backpack;    
 }
