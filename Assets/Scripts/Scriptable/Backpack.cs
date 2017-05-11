@@ -4,10 +4,10 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "BackpackConfig", menuName = "BackpackConfig")]
 
-public class BackpackConfig : ScriptableObject
+public class Backpack : ScriptableObject
 {
     public string backpackName;
     public float maxWeight;
 
-    public List<Item> contents = new List<Item>();
+    public List<Item> contents;
 }
