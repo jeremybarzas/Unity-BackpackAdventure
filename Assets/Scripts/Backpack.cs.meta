@@ -1,11 +1,12 @@
 fileFormatVersion: 2
-guid: 40aefa65ed510424c9d5478d233bd62a
-timeCreated: 1494525444
+guid: e68d745b74937164cbccb3619c9d1051
+timeCreated: 1494525337
 licenseType: Pro
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - itemConfig: {fileID: 11400000, guid: 575a31fef49a87048b89eb125b42d8d8, type: 2}
+  - backpackConfig: {fileID: 11400000, guid: 6216a70e7de308e42baeb077eaa4510c, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
