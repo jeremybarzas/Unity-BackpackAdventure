@@ -5,18 +5,24 @@ using UnityEngine;
 public class BackpackBehaviour : MonoBehaviour
 {
     public Backpack backpackConfig;
+    public int capacity;
     public List<Item> contents;
 
     // Use this for initialization
     void Start ()
     {
         contents = new List<Item>();
+        capacity = backpackConfig.capacity;
         backpackConfig.contents.ForEach(i => contents.Add(Instantiate(i)));
 	}
 
-    public void AddItem(Item item)
-    {        
-       contents.Add(item);
+
+    public bool AddItem(Item item)
+    {
+        if (contents.Count + 1 > capacity)
+            return false;
+        contents.Add(item);
+        return true;
     }
 
     public bool RemoveItem(Item item)
