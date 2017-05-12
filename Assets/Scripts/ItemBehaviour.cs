@@ -22,7 +22,6 @@ public class ItemBehaviour : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Debug.Log(other.name);
             if (other.gameObject.GetComponent<BackpackBehaviour>())
             {
                 other.gameObject.GetComponent<BackpackBehaviour>().AddItem(itemRuntime);
