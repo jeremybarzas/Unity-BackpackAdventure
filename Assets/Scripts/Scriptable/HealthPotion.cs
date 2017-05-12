@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Item/Potion/HealthPotion")]
+[CreateAssetMenu(menuName = "Potion/HealthPotion")]
 
-public class HealthPotion : Consumable
-{
-    new public string itemName;
-    new public string itemID;
+public class HealthPotion : Potion
+{   
     public int healthAmount;
 }
