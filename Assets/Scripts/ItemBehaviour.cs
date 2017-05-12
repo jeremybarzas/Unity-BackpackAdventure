@@ -20,18 +20,13 @@ public class ItemBehaviour : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log(other.name);
             if (other.gameObject.GetComponent<BackpackBehaviour>())
             {
                 other.gameObject.GetComponent<BackpackBehaviour>().AddItem(itemRuntime);
-               
             }
         }
-        
-
     }
 }
-
