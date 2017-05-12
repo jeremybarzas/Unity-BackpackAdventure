@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BackpackBehaviour : MonoBehaviour
 {
+    [System.Serializable]
+    public class OnBackpackChange : UnityEvent { }
+    public OnBackpackChange onBackpackChange;
+    
     public Backpack backpackConfig;
     public int capacity;
     public List<Item> contents;
@@ -11,6 +16,7 @@ public class BackpackBehaviour : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        onBackpackChange.Invoke();
         contents = new List<Item>();
         capacity = backpackConfig.capacity;
         backpackConfig.contents.ForEach(i => contents.Add(Instantiate(i)));

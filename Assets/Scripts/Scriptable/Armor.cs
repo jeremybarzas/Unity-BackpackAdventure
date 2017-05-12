@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Armor : Equipment
 {
-    public string DescriptiveName;
+
 }

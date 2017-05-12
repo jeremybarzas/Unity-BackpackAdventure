@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Health Potion
+  - Mana Potion
+  - Light Armor
+  - Heavy Armor
+  - Handgun
+  - Longsword
   layers:
   - Default
   - TransparentFX
