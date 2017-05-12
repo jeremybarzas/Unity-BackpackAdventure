@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Item/Equipment/Armor/LightArmor")]
+[CreateAssetMenu(menuName = "Armor/LightArmor")]
 
-public class LightArmor : MonoBehaviour
+public class LightArmor : Armor
 {
-    new public string itemName;
-    new public string itemID;
     public int defense;
 }
