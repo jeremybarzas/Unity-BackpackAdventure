@@ -11,6 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269b70dfe3d391e459a361fd116024e5, type: 3}
   m_Name: Long Sword
   m_EditorClassIdentifier: 
-  itemName: 
-  itemID: 
-  atkDmg: 0
+  atkDmg: 10
