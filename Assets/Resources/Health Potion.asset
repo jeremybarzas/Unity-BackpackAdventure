@@ -8,9 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 918213c2769e52742bc3d1ed7008642d, type: 3}
-  m_Name: Adventure's Backpack
+  m_Script: {fileID: 11500000, guid: 5de457f5ad90f1346b1bda578ad20f51, type: 3}
+  m_Name: Health Potion
   m_EditorClassIdentifier: 
-  backpackName: Adventurer's Backpack
-  maxWeight: 20
-  contents: []
+  itemName: Health Potion
+  itemID: i001
+  healthAmount: 25
