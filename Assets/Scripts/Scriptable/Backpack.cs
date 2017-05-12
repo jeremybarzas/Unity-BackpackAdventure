@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BackpackConfig", menuName = "BackpackConfig")]
+[CreateAssetMenu(menuName = "Backpack")]
 
 public class Backpack : ScriptableObject
 {
