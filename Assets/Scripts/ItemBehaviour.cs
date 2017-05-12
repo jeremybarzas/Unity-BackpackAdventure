@@ -1,9 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ItemBehaviour : MonoBehaviour
 {
+    [System.Serializable]
+    
+    public class OnItemAdd : UnityEvent{}
+    public class OnItemAddWithString : UnityEvent<string> { }
+    public OnItemAdd onItemAdd;
+    public OnItemAddWithString onItemAddWithString;
     public Item itemConfig;
     private Item itemRuntime;
     [HideInInspector]
@@ -16,6 +23,8 @@ public class ItemBehaviour : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        onItemAddWithString.Invoke(itemName);
+        onItemAdd.Invoke();
         itemRuntime = Instantiate(itemConfig);
     }
     void OnTriggerEnter(Collider other)
@@ -28,4 +37,6 @@ public class ItemBehaviour : MonoBehaviour
             }
         }
     }
+
 }
+
