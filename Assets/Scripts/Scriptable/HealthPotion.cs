@@ -4,9 +4,9 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Item/Potion/HealthPotion")]
 
-public class HealthPotion : Potion
+public class HealthPotion : Consumable
 {
-    public string itemName;
-    public string itemID;
+    new public string itemName;
+    new public string itemID;
     public int healthAmount;
 }
