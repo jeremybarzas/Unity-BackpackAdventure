@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a92d88a28fc50194dbbf2954317baa58, type: 3}
   m_Name: Handgun
   m_EditorClassIdentifier: 
-  atkDmg: 0
+  atkDmg: 20
