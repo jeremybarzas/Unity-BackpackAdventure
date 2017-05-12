@@ -16,9 +16,9 @@ public class BackpackBehaviour : MonoBehaviour
 
     public void AddItem(Item item)
     {        
-       contents.Add(item);       
-        
+       contents.Add(item);
     }
+
     public bool RemoveItem(Item item)
     {
         int count = contents.Count;
