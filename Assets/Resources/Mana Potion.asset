@@ -8,6 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb795a2a21d58d47b95480d49152b01, type: 3}
-  m_Name: New Health Potion
+  m_Script: {fileID: 11500000, guid: 3a2a7dfd66a65614486dff7989155f75, type: 3}
+  m_Name: Mana Potion
   m_EditorClassIdentifier: 
+  itemName: Mana Potion
+  itemID: i002
+  manaAmount: 50
