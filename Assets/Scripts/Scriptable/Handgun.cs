@@ -6,5 +6,5 @@ using UnityEngine;
 
 public class Handgun : Weapon
 {    
-    public int atkDmg;
+
 }
