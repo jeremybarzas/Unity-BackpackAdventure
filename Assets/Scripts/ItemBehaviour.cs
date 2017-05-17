@@ -7,19 +7,21 @@ public class ItemBehaviour : MonoBehaviour
 {
     [System.Serializable]
     
-    public class OnItemAdd : UnityEvent{}
+  public class ItemInfo
+    {
+        public string itemName;
+        public string itemID;
+        public float weight;
+        public Item itemConfig;
+        private Item itemRuntime;
+
+    }
     public class OnItemAddWithString : UnityEvent<string> { }
     public OnItemAdd onItemAdd;
     public OnItemAddWithString onItemAddWithString;
     public Item itemConfig;
     private Item itemRuntime;
-    [HideInInspector]
-    public string itemName;
-    [HideInInspector]
-    public string itemID;
-    [HideInInspector]
-    public float weight;
-
+    
     // Use this for initialization
     void Start()
     {
@@ -29,7 +31,7 @@ public class ItemBehaviour : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             if (other.gameObject.GetComponent<BackpackBehaviour>())
             {
@@ -37,6 +39,5 @@ public class ItemBehaviour : MonoBehaviour
             }
         }
     }
-
 }
 
