@@ -4,6 +4,7 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+
 [CreateAssetMenu(menuName ="Loot Table")]
 public class LootTable : ScriptableObject {
      
@@ -12,22 +13,42 @@ public class LootTable : ScriptableObject {
     public class ItemDrop
     {
         public Item droppedItem;
-        public float dropChance = UnityEngine.Random.Range(0f, 1f);
+        [Range(0f, 1f)]
+        public float dropChance;
 
 }
-    public float randomRoll = UnityEngine.Random.Range(0f, 1f);
+    public float randomRoll;
     public List<ItemDrop> Drops;
-    List<ItemDrop> GetDrops()
+    List<Item> GetDrops()
     {
-        foreach
+        randomRoll = UnityEngine.Random.Range(0f, 1f);
+        List<Item> itemsDropped = new List<Item>();
+        foreach (ItemDrop a in Drops)
+        {
+            if (a.dropChance > randomRoll)
+                itemsDropped.Add(a.droppedItem);
+        }
+        return itemsDropped;
     }
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [CustomEditor(typeof(LootTable))]
+    public class InspectorLootTable : Editor
+    {
+        string result = "";
+        List<Item> Items = new List<Item>();
+        public override void OnInspectorGUI()
+        {
+            var myTarget = target as LootTable;
+            if (GUILayout.Button("this Button"))
+            {
+                Items = myTarget.GetDrops();
+            }
+            foreach(var item in Items)
+            {
+                Debug.Log(item.name);
+            }
+            EditorGUILayout.LabelField("result", result);
+            base.OnInspectorGUI();
+        }
+        
+    }
 }
