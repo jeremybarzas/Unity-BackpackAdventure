@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Health Potion
   m_EditorClassIdentifier: 
   itemName: Health Potion
-  itemID: i001
+  itemID: 
   healthAmount: 25

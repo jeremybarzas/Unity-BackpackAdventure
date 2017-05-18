@@ -13,9 +13,8 @@ public class ItemBehaviour : MonoBehaviour
     [HideInInspector]
     public float weight;
 
-    public ItemPickedUp itempickedup = new ItemPickedUp();
+    public static ItemPickedUp itempickedup = new ItemPickedUp();
 
-    // Use this for initialization
     void Start()
     {
         itemRuntime = Instantiate(itemConfig);
@@ -27,7 +26,7 @@ public class ItemBehaviour : MonoBehaviour
             if (other.gameObject.GetComponent<BackpackBehaviour>())
             {
                 other.gameObject.GetComponent<BackpackBehaviour>().AddItem(itemRuntime);
-                itempickedup.Invoke();
+                itempickedup.Invoke(itemRuntime);
             }
         }
     }

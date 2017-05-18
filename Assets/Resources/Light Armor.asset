@@ -11,4 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b3b4eb2b59d4d418c59c5189a250f9, type: 3}
   m_Name: Light Armor
   m_EditorClassIdentifier: 
+  itemName: Light Armor
+  itemID: 
   defense: 5
