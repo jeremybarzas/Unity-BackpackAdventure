@@ -6,27 +6,25 @@ public class ItemBehaviour : MonoBehaviour
 {
     public Item itemConfig;
     private Item itemRuntime;
-    [HideInInspector]
-    public string itemName;
-    [HideInInspector]
-    public string itemID;
-    [HideInInspector]
-    public float weight;
-
     public static ItemPickedUp itempickedup = new ItemPickedUp();
 
     void Start()
     {
-        itemRuntime = Instantiate(itemConfig);
+        //itemRuntime = Instantiate(itemConfig);
     }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            if (other.gameObject.GetComponent<BackpackBehaviour>())
+            var bp = other.gameObject.GetComponent<BackpackBehaviour>();
+            if (bp)
             {
-                other.gameObject.GetComponent<BackpackBehaviour>().AddItem(itemRuntime);
-                itempickedup.Invoke(itemRuntime);
+                bool stored = bp.AddItem(itemConfig);
+                if (stored)
+                {
+                    itempickedup.Invoke(itemConfig);
+                }                
             }
         }
     }

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    void Start()
+    public Player playerConfig;
+    private Player playerRuntime;
+    
+	void Start ()
     {
-
-    }
+        playerRuntime = Instantiate(playerConfig);
+	}
 }

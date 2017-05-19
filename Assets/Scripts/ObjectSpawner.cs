@@ -11,9 +11,9 @@ public class ObjectSpawner : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        var player = Instantiate(playerPrefab);
-        var healthPotion = Instantiate(healthPotionPrefab);
-        var manaPotion = Instantiate(manaPotionPrefab);
+        Instantiate(playerPrefab);
+        Instantiate(healthPotionPrefab);
+        Instantiate(manaPotionPrefab);
     }
 	
 	// Update is called once per frame
