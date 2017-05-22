@@ -12,17 +12,24 @@ public class BackpackBehaviour : MonoBehaviour
     void Start ()
     {
         contents = new List<Item>();
-        capacity = backpackConfig.capacity;
-        backpackConfig.contents.ForEach(i => contents.Add(Instantiate(i)));
+        //capacity = backpackConfig.capacity;
+        //backpackConfig.contents.ForEach(i => contents.Add(Instantiate(i)));
 	}
 
 
-    public bool AddItem(Item item)
+    //public bool AddItem(Item item)
+    //{
+    //    if (contents.Count + 1 > capacity)
+    //        return false;
+    //    contents.Add(item);
+    //    return true;
+    //}
+    void AddItem(Item item)
     {
-        if (contents.Count + 1 > capacity)
-            return false;
-        contents.Add(item);
-        return true;
+        if (contents.Count < capacity) ;
+        { contents.Add(item);
+            //Destroy(gameObject);
+        }
     }
 
     public bool RemoveItem(Item item)
@@ -35,4 +42,5 @@ public class BackpackBehaviour : MonoBehaviour
         }
         return false;
     }
+  //code for manual droppage.
 }
