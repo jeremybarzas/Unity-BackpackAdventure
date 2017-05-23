@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     Rigidbody2D rb = new Rigidbody2D();
-
+    BackpackBehaviour backpack;
 	void Update () {
         //sets variable x to the value 
         CharacterMove();
+        
 	}
 
     void CharacterMove()
@@ -20,5 +21,5 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate()
     {
         
-    }
+    } 
 }

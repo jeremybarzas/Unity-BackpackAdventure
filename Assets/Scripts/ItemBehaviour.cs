@@ -25,8 +25,12 @@ public class ItemBehaviour : MonoBehaviour
             if (other.gameObject.GetComponent<BackpackBehaviour>())
                 other.gameObject.GetComponent<BackpackBehaviour>().AddItem(itemRuntime);
             if (itemRuntime == other.gameObject.GetComponent<BackpackBehaviour>().contents[count])
+            {
                 Destroy(gameObject);
-        }
+                Debug.Log(itemConfig.name + " added");
+            }
+}
     }
+
 }
 

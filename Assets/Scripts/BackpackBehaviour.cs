@@ -13,23 +13,28 @@ public class BackpackBehaviour : MonoBehaviour
     {
         contents = new List<Item>(capacity);
 	}
-
+    void Update()
+    {
+        DropItem();
+    }
     public void AddItem(Item item)
     {
         if (contents.Count < capacity)
-        { contents.Add(item);
+        {
+            contents.Add(item);
         }
     }
 
-    public bool RemoveItem(Item item)
+    public void DropItem()
     {
-        int count = contents.Count;
-        contents.Remove(item);
-        if (contents.Count < count)
+        if (Input.GetKeyDown("g"))
         {
-            return true;
+        int last = contents.Count - 1;
+        Item item = contents[last];
+            Instantiate(item, gameObject.transform);
+            contents.RemoveAt(last);
         }
-        return false;
     }
+
     //code for manual droppage.
 }
