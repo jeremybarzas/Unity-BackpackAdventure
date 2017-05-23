@@ -1,42 +1,32 @@
-﻿//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-//using UnityEngine.Events;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
 
-//public class ItemBehaviour : MonoBehaviour
-//{
-//    [System.Serializable]
-//    public class ItemInfo
-//    {
-//        public string itemName;
-//        public string itemID;
-//        public float weight;
-//        public Item itemConfig;
-//        private Item itemRuntime;
+public class ItemBehaviour : MonoBehaviour
+{
 
-//    }
-//    public class OnItemAddWithString : UnityEvent<string> { }
-//    // public OnItemAdd onItemAdd;
-//    public OnItemAddWithString onItemAddWithString;
-//    public Item itemConfig;
-//    private Item itemRuntime;
+    public string itemName;
+    public string itemID;
+    public float weight;
+    public Item itemConfig;
+    private Item itemRuntime;
 
-//    // Use this for initialization
-//    void Start()
-//    {
-//        onItemAddWithString.Invoke(itemName);
-//        onItemAdd.Invoke();
-//        itemRuntime = Instantiate(itemConfig);
-//    }
-//    void OnTriggerEnter(Collider other)
-//    {
-//        if (other.gameObject.CompareTag("Player"))
-//        {
-//            if (other.gameObject.GetComponent<BackpackBehaviour>())
-//            {
-//                other.gameObject.GetComponent<BackpackBehaviour>().AddItem(itemRuntime);
-//            }
-//        }
-//    }
-//}
+   
+    void Start()
+    {
+        itemRuntime = Instantiate(itemConfig);
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        int count = other.gameObject.GetComponent<BackpackBehaviour>().contents.Count;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (other.gameObject.GetComponent<BackpackBehaviour>())
+                other.gameObject.GetComponent<BackpackBehaviour>().AddItem(itemRuntime);
+            if (itemRuntime == other.gameObject.GetComponent<BackpackBehaviour>().contents[count])
+                Destroy(gameObject);
+        }
+    }
+}
 
