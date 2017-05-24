@@ -6,5 +6,5 @@ using UnityEngine;
 
 public class LongSword : Weapon
 {
-    public int atkDmg;
+   
 }

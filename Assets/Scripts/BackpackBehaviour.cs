@@ -1,44 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class BackpackBehaviour : MonoBehaviour
 {
-    [System.Serializable]
-    public class OnBackpackChange : UnityEvent { }
-    public OnBackpackChange onBackpackChange;
-    
     public Backpack backpackConfig;
     public int capacity;
     public List<Item> contents;
-
+    public bool drop;
     // Use this for initialization
     void Start ()
     {
-        onBackpackChange.Invoke();
-        contents = new List<Item>();
-        capacity = backpackConfig.capacity;
-        backpackConfig.contents.ForEach(i => contents.Add(Instantiate(i)));
+        contents = new List<Item>(capacity);
 	}
-
-
-    public bool AddItem(Item item)
+    void Update()
     {
-        if (contents.Count + 1 > capacity)
-            return false;
-        contents.Add(item);
-        return true;
+        DropItem();
     }
-
-    public bool RemoveItem(Item item)
+    public void AddItem(Item item)
     {
-        int count = contents.Count;
-        contents.Remove(item);
-        if (contents.Count < count)
+        if (contents.Count < capacity)
         {
-            return true;
+            contents.Add(item);
         }
-        return false;
     }
+
+    public void DropItem()
+    {
+        if (Input.GetKeyDown("g"))
+        {
+            drop = true;
+        int last = contents.Count - 1;
+        Item item = contents[last];
+            Instantiate(item, gameObject.transform);
+            contents.RemoveAt(last);
+            drop = false;
+        }
+    }
+
+    //code for manual droppage.
 }
