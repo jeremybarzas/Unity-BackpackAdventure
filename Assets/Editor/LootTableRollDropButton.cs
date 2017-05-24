@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
+//Conner
 [CustomEditor(typeof(LootTable))]
 public class LootTableRollDropButton : Editor
 {

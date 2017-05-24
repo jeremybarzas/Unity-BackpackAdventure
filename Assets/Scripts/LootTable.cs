@@ -4,7 +4,7 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-
+//Conner
 [CreateAssetMenu(menuName ="Loot Table")]
 public class LootTable : ScriptableObject {
      
@@ -19,7 +19,7 @@ public class LootTable : ScriptableObject {
 }
     public float randomRoll;
     public List<ItemDrop> Drops;
-    List<Item> GetDrops()
+    public List<Item> GetDrops()
     {
         randomRoll = UnityEngine.Random.Range(0f, 1f);
         List<Item> itemsDropped = new List<Item>();

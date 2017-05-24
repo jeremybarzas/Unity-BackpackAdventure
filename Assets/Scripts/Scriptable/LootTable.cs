@@ -3,35 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CreateAssetMenu(menuName = "Loot Table")]
-public class LootTable : ScriptableObject
+// jeremy
+namespace JeremyLootTable
 {
-    [System.Serializable]
-    public class ItemDrop
+    [CreateAssetMenu(menuName = "Loot Table")]
+    public class LootTable : ScriptableObject
     {
-        public Item item;
-        [Range(0, 1)]
-        public float dropChance;
-    }
-    [SerializeField]
-    private List<ItemDrop> droppableItems;
-    [SerializeField]
-    private List<Item> dropResults;    
-    public List<Item> GetDrops()
-    {
-        List<Item> actualDrops = new List<Item>();
-        foreach (ItemDrop itemdrop in droppableItems)
+        [System.Serializable]
+        public class ItemDrop
         {
-            if (actualDrops.Count <= droppableItems.Count)
+            public Item item;
+            [Range(0, 1)]
+            public float dropChance;
+        }
+        [SerializeField]
+        private List<ItemDrop> droppableItems;
+        [SerializeField]
+        private List<Item> dropResults;
+        public List<Item> GetDrops()
+        {
+            List<Item> actualDrops = new List<Item>();
+            foreach (ItemDrop itemdrop in droppableItems)
             {
-                float randomRoll = Random.Range(0.0f, 1.0f);
-                if (itemdrop.dropChance > randomRoll)
+                if (actualDrops.Count <= droppableItems.Count)
                 {
-                    actualDrops.Add(itemdrop.item);
+                    float randomRoll = Random.Range(0.0f, 1.0f);
+                    if (itemdrop.dropChance > randomRoll)
+                    {
+                        actualDrops.Add(itemdrop.item);
+                    }
                 }
             }
+            dropResults = actualDrops;
+            return actualDrops;
         }
-        dropResults = actualDrops;
-        return actualDrops;
     }
 }
