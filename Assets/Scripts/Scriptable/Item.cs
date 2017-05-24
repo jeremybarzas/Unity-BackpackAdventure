@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class Item : ScriptableObject
 {    
-    protected string itemName;
-    
-    protected string itemID;   
+    public string itemName;
+    public string itemID;
 }

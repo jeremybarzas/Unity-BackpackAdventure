@@ -4,4 +4,4 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class ItemPickedUp : UnityEvent { }
+public class ItemPickedUp : UnityEvent<Item> { }

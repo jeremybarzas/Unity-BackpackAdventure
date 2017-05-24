@@ -11,4 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e1a7456d17ee04c82f4e776f77cd96, type: 3}
   m_Name: Heavy Armor
   m_EditorClassIdentifier: 
+  itemName: Heavy Armor
+  itemID: 
   defense: 10
