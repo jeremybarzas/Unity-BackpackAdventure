@@ -7,24 +7,22 @@ public class ItemBehaviour : MonoBehaviour
     public Item itemConfig;
     private Item itemRuntime;
     public static ItemPickedUp itempickedup = new ItemPickedUp();
-
     void Start()
     {
-        //itemRuntime = Instantiate(itemConfig);
     }
-
     void OnTriggerEnter(Collider other)
-    {
+    {  
         if(other.gameObject.CompareTag("Player"))
         {
             var bp = other.gameObject.GetComponent<BackpackBehaviour>();
-            if (bp)
+            if(bp)
             {
-                bool stored = bp.AddItem(itemConfig);
-                if (stored)
+                bool added = bp.AddItem(itemConfig);
+                if (added == true)
                 {
                     itempickedup.Invoke(itemConfig);
-                }                
+                    Destroy(gameObject);
+                }
             }
         }
     }
