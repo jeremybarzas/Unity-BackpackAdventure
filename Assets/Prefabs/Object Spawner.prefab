@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114448625817836272}
   m_Layer: 0
   m_Name: Object Spawner
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dadfc505e3d2fe541a4335ce0e6fe047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 1979549041975998, guid: 5b88339213d61d441852334588fbce65,
+  playerPrefab: {fileID: 1480629473958310, guid: 5b88339213d61d441852334588fbce65,
     type: 2}
   healthPotionPrefab: {fileID: 1010402942283382, guid: fd1bed91bbeef754cba5b7fc17a719a6,
     type: 2}
