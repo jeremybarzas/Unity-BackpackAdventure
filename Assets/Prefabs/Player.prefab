@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114254227472526848}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33783989067866428
 MeshFilter:
@@ -124,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backpackConfig: {fileID: 11400000, guid: 86ecb75f94073d943a74cbfbe0386c03, type: 2}
+  itemAmount: 0
 --- !u!114 &114284413584864584
 MonoBehaviour:
   m_ObjectHideFlags: 1
