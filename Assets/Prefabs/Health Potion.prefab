@@ -27,7 +27,7 @@ GameObject:
   m_Layer: 0
   m_Name: Health Potion
   m_TagString: Health Potion
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -109,9 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40aefa65ed510424c9d5478d233bd62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
-  itemID: 
-  weight: 0
   itemConfig: {fileID: 11400000, guid: 491649ff70a258f48afb98a527f9b0dd, type: 2}
 --- !u!135 &135949361282908274
 SphereCollider:
