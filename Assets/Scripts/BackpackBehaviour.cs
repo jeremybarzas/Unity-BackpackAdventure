@@ -7,15 +7,16 @@ public class BackpackBehaviour : MonoBehaviour
 {    
     public Backpack backpackConfig;
     private Backpack backpackRuntime;
-    
-    public bool AddItem(Item item)
-    {        
-        if (backpackRuntime.contents.Count + 1 > backpackRuntime.capacity)
-            return false;
-        backpackRuntime.contents.Add(item);
-        return true;
+    [HideInInspector]
+    public int itemAmount;
+    public void AddItem(Item item)
+    {
+        if (itemAmount < backpackConfig.capacity)
+        {
+            backpackConfig.contents.Add(item);
+            itemAmount += 1;
+        }
     }
-
     public bool RemoveItem(Item item)
     {
         int precount = backpackRuntime.contents.Count;
