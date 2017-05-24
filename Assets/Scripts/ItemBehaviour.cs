@@ -19,15 +19,15 @@ public class ItemBehaviour : MonoBehaviour
     }
     void Update()
     {
-        int last = GetComponent<BackpackBehaviour>().contents.Count - 1;
-        Item item = GetComponent<BackpackBehaviour>().contents[last];
-        if (GetComponent<BackpackBehaviour>().drop == true)
-        {
-            if(item.name == "Health Potion")
-            {
+        //int last = GetComponent<BackpackBehaviour>().contents.Count - 1;
+        //Item item = GetComponent<BackpackBehaviour>().contents[last];
+        //if (GetComponent<BackpackBehaviour>().drop == true)
+        //{
+        //    if(item.name == "Health Potion")
+        //    {
                 
-            }
-        }
+        //    }
+        //}
             
     }
 
