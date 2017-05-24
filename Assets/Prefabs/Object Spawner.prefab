@@ -53,9 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 1480629473958310, guid: 5b88339213d61d441852334588fbce65,
     type: 2}
-  healthPotionPrefab: {fileID: 1534162678612460, guid: fd1bed91bbeef754cba5b7fc17a719a6,
+  healthPotionPrefab: {fileID: 1010402942283382, guid: fd1bed91bbeef754cba5b7fc17a719a6,
     type: 2}
-  manaPotionPrefab: {fileID: 1513273910193562, guid: 5f209e87bc2ad104d9dd184679574ede,
+  manaPotionPrefab: {fileID: 1051864189698666, guid: 5f209e87bc2ad104d9dd184679574ede,
     type: 2}
   levelGroundPrefab: {fileID: 1790499513539526, guid: c8bca47321bf7da47979453460b8b94c,
     type: 2}
