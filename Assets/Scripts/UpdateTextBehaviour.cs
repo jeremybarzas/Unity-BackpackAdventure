@@ -14,11 +14,11 @@ public class UpdateTextBehaviour : MonoBehaviour
 
     void OnEnable()
     {
-        ItemBehaviour.itempickedup.AddListener(ChangeItemText);
+        ItemBehaviour.itemPickedUp.AddListener(ChangeItemText);
     }
     void OnDisable()
     {
-        ItemBehaviour.itempickedup.RemoveListener(ChangeItemText);
+        ItemBehaviour.itemPickedUp.RemoveListener(ChangeItemText);
     }
 
     void ChangeItemText(Item item)

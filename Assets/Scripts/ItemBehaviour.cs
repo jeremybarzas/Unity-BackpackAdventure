@@ -6,10 +6,8 @@ public class ItemBehaviour : MonoBehaviour
 {
     public Item itemConfig;
     private Item itemRuntime;
-    public static ItemPickedUp itempickedup = new ItemPickedUp();
-    void Start()
-    {
-    }
+    public static ItemPickedUp itemPickedUp = new ItemPickedUp();
+
     void OnTriggerEnter(Collider other)
     {  
         if(other.gameObject.CompareTag("Player"))
@@ -20,7 +18,8 @@ public class ItemBehaviour : MonoBehaviour
                 bool added = bp.AddItem(itemConfig);
                 if (added == true)
                 {
-                    itempickedup.Invoke(itemConfig);
+                    Debug.Log("You picked up " + itemConfig.itemName + ".");
+                    itemPickedUp.Invoke(itemConfig);
                     Destroy(gameObject);
                 }
             }
