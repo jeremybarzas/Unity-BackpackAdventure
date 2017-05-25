@@ -9,6 +9,7 @@ public class PlayerBehaviour : MonoBehaviour
     
 	void Start ()
     {
+        FindObjectOfType<BackpackLoaderBehaviour>().backpackBehaviour = GetComponent<BackpackBehaviour>();
         playerRuntime = Instantiate(playerConfig);
 	}
 }

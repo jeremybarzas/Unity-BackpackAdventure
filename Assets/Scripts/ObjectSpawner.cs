@@ -19,7 +19,7 @@ public class ObjectSpawner : MonoBehaviour
         ItemBehaviour.itemPickedUp.AddListener(ReinstantiateItem);
     }
 
-    void Start()
+    void Awake()
     {
         Instantiate(playerPrefab);
         Instantiate(healthPotionPrefab);

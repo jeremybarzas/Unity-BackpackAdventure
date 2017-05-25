@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class BackpackLoaderBehaviour : MonoBehaviour
 {
-    public Backpack backPack = null;
+    public BackpackLoader backpackLoader;
+    public BackpackBehaviour backpackBehaviour;
+    public Backpack playerBackpack;
+
+    public void LoadBackpack()
+    {
+        playerBackpack = backpackLoader.LoadBackpack("PlayerBackpack");
+    }
 
     void Start()
     {
-        UnityEngine.Assertions.Assert.IsNull(backPack);
-        backPack = null;
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            backPack = BackpackLoader.Instance.LoadBackpack("default-backpack");
-        }
-    }    
+        UnityEngine.Assertions.Assert.IsNull(playerBackpack);
+        var player = FindObjectOfType<PlayerBehaviour>();
+        playerBackpack = backpackBehaviour.backpackRuntime;
+    }  
 }

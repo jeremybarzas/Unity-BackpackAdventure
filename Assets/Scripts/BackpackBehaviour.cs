@@ -30,7 +30,7 @@ public class BackpackBehaviour : MonoBehaviour
         return false;
     }    
 
-    void Start()
+    void Awake()
     {
         backpackRuntime = Instantiate(backpackConfig);
     }    
