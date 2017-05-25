@@ -6,7 +6,8 @@ using UnityEngine.Events;
 public class BackpackBehaviour : MonoBehaviour
 {    
     public Backpack backpackConfig;
-    private Backpack backpackRuntime;
+    public Backpack backpackRuntime;
+    public ItemDropped itemDropped = new ItemDropped();
 
     public bool AddItem(Item item)
     {
@@ -17,11 +18,13 @@ public class BackpackBehaviour : MonoBehaviour
     }
 
     public bool RemoveItem(Item item)
-    {
+    {        
         int precount = backpackRuntime.contents.Count;
         backpackRuntime.contents.Remove(item);
         if (backpackRuntime.contents.Count < precount)
         {
+            Debug.Log("You dropped " + item.itemName + ".");
+            itemDropped.Invoke(item);
             return true;
         }
         return false;
@@ -30,10 +33,5 @@ public class BackpackBehaviour : MonoBehaviour
     void Start()
     {
         backpackRuntime = Instantiate(backpackConfig);
-    }
-
-    void Update()
-    {
-
-    }
+    }    
 }
