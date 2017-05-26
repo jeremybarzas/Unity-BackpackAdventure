@@ -5,18 +5,23 @@ using UnityEngine;
 public class BackpackLoaderBehaviour : MonoBehaviour
 {
     public BackpackLoader backpackLoader;
-    public BackpackBehaviour backpackBehaviour;
-    public Backpack playerBackpack;
+    public PlayerBehaviour playerBehaviour;
+    public BackpackBehaviour playerBackpackBehaviour;
 
     public void LoadBackpack()
     {
-        playerBackpack = backpackLoader.LoadBackpack("PlayerBackpack");
+        var bp = backpackLoader.LoadBackpack("PlayerBackpack");
+        playerBackpackBehaviour.SetBackpack(bp);
     }
 
-    void Start()
+    void SetPlayer(PlayerBehaviour pb)
     {
-        UnityEngine.Assertions.Assert.IsNull(playerBackpack);
-        var player = FindObjectOfType<PlayerBehaviour>();
-        playerBackpack = backpackBehaviour.backpackRuntime;
-    }  
+        playerBehaviour = pb;
+        playerBackpackBehaviour = pb.gameObject.GetComponent<BackpackBehaviour>();
+    }
+
+    void Awake()
+    {
+        PlayerBehaviour.onPlayerLoaded.AddListener(SetPlayer);        
+    }
 }

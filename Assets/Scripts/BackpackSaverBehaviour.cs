@@ -5,16 +5,22 @@ using UnityEngine;
 public class BackpackSaverBehaviour : MonoBehaviour
 {
     public BackpackSaver backpackSaver;
-    public Backpack playerBackpack;
-
+    public PlayerBehaviour playerBehaviour;
+    public BackpackBehaviour playerBackpackBehaviour;
+    
     public void SaveBackpack()
     {
-        backpackSaver.SaveBackpack(playerBackpack, "PlayerBackpack");
+        backpackSaver.SaveBackpack(playerBackpackBehaviour.backpackRuntime, "PlayerBackpack");
     }
 
-    void Start()
+    void SetPlayer(PlayerBehaviour pb)
     {
-        var player = FindObjectOfType<PlayerBehaviour>();
-        playerBackpack = player.GetComponent<BackpackBehaviour>().backpackRuntime;
+        playerBehaviour = pb;
+        playerBackpackBehaviour = pb.gameObject.GetComponent<BackpackBehaviour>();
+    }
+
+    void Awake()
+    {
+        PlayerBehaviour.onPlayerLoaded.AddListener(SetPlayer);
     }
 }

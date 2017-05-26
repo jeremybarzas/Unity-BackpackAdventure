@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerBehaviour : MonoBehaviour
 {
     public Player playerConfig;
-    private Player playerRuntime;
-    
+    public static OnPlayerLoaded onPlayerLoaded = new OnPlayerLoaded();
+
 	void Start ()
-    {
-        FindObjectOfType<BackpackLoaderBehaviour>().backpackBehaviour = GetComponent<BackpackBehaviour>();
-        playerRuntime = Instantiate(playerConfig);
+    {        
+        onPlayerLoaded.Invoke(this);
 	}
+    
+    public class OnPlayerLoaded : UnityEvent<PlayerBehaviour> {}
 }
