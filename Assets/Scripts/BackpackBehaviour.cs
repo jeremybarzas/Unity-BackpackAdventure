@@ -7,7 +7,7 @@ public class BackpackBehaviour : MonoBehaviour
 {    
     public Backpack backpackConfig;
     public Backpack backpackRuntime;
-    public ItemDropped itemDropped = new ItemDropped();
+    public static ItemDropped itemDropped = new ItemDropped();
 
     public bool AddItem(Item item)
     {
@@ -28,9 +28,14 @@ public class BackpackBehaviour : MonoBehaviour
             return true;
         }
         return false;
-    }    
+    }
 
-    void Start()
+    public void SetBackpack(Backpack bp)
+    {
+        backpackRuntime.contents = bp.contents;
+    }
+
+    void Awake()
     {
         backpackRuntime = Instantiate(backpackConfig);
     }    

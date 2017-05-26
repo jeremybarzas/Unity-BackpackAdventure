@@ -8,8 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 570e6bb8516f5e74184f283420e3cd0e, type: 3}
-  m_Name: Enemy Loot Table
+  m_Script: {fileID: 11500000, guid: ac0bc42408099b847bcdfcdfaa1843ff, type: 3}
+  m_Name: BackpackSaver
   m_EditorClassIdentifier: 
-  randomRoll: 0
-  Drops: []

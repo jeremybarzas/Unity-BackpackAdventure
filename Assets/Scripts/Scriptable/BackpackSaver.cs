@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BackpackSaver", menuName = "GameState/Savers/BackpackSaver", order = 1)]
+[CreateAssetMenu(fileName = "BackpackSaver", menuName = "GameState/Savers/BackpackSaver")]
 public class BackpackSaver : ScriptableObject
 {
     private static BackpackSaver _instance;

@@ -7,23 +7,23 @@ public class ObjectSpawner : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject healthPotionPrefab;
     public GameObject manaPotionPrefab;
-    public GameObject levelGroundPrefab;
+    public GameObject levelGroundPrefab;    
 
     void ReinstantiateItem(Item item)
     {
-        Instantiate(item);
+        Debug.Log("reinstantiate this item: " + item.itemName);
+        var playertransform = FindObjectOfType<PlayerBehaviour>().transform;
+
+        var go = Instantiate(manaPotionPrefab, playertransform.position, transform.rotation);
+        go.GetComponent<ItemBehaviour>().SetItem(item);
     }
 
-    void OnEnable()
-    {
-        ItemBehaviour.itemPickedUp.AddListener(ReinstantiateItem);
-    }
-
-    void Start()
+    void Awake()
     {
         Instantiate(playerPrefab);
         Instantiate(healthPotionPrefab);
         Instantiate(manaPotionPrefab);
         Instantiate(levelGroundPrefab);
+        BackpackBehaviour.itemDropped.AddListener(ReinstantiateItem);
     }
 }

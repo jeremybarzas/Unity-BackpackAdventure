@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class BackpackSaverBehaviour : MonoBehaviour
 {
-    public Backpack backPack;
-    public string fileName = "default-backpack";
-
-	// Update is called once per frame
-	void Update ()
+    public BackpackSaver backpackSaver;
+    public PlayerBehaviour playerBehaviour;
+    public BackpackBehaviour playerBackpackBehaviour;
+    
+    public void SaveBackpack()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            UnityEngine.Assertions.Assert.IsNotNull(backPack, "Please assign backpack...");
-            BackpackSaver.Instance.SaveBackpack(backPack, fileName);
-        }        
-	}
+        backpackSaver.SaveBackpack(playerBackpackBehaviour.backpackRuntime, "PlayerBackpack");
+    }
+
+    void SetPlayer(PlayerBehaviour pb)
+    {
+        playerBehaviour = pb;
+        playerBackpackBehaviour = pb.gameObject.GetComponent<BackpackBehaviour>();
+    }
+
+    void Awake()
+    {
+        PlayerBehaviour.onPlayerLoaded.AddListener(SetPlayer);
+    }
 }
