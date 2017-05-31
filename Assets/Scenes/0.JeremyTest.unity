@@ -300,6 +300,30 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114448625817836272, guid: 96828d08dba051e4d8a6f69b7b4e02d0,
+        type: 2}
+      propertyPath: longSwordPrefab
+      value: 
+      objectReference: {fileID: 1427595252674040, guid: 1126136f3f9e4564289cd0af0d9c89d2,
+        type: 2}
+    - target: {fileID: 114448625817836272, guid: 96828d08dba051e4d8a6f69b7b4e02d0,
+        type: 2}
+      propertyPath: handgunPrefab
+      value: 
+      objectReference: {fileID: 1144025777131044, guid: bd761573a05802b449d873a41b5f955b,
+        type: 2}
+    - target: {fileID: 114448625817836272, guid: 96828d08dba051e4d8a6f69b7b4e02d0,
+        type: 2}
+      propertyPath: heavyArmorPrefab
+      value: 
+      objectReference: {fileID: 1618001122348328, guid: 247439f9055d8284480753dc9adc3e20,
+        type: 2}
+    - target: {fileID: 114448625817836272, guid: 96828d08dba051e4d8a6f69b7b4e02d0,
+        type: 2}
+      propertyPath: lightArmorPrefab
+      value: 
+      objectReference: {fileID: 1139440775129652, guid: a86e1cf6990d216459ca45963a4ac293,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96828d08dba051e4d8a6f69b7b4e02d0, type: 2}
   m_IsPrefabParent: 0
@@ -460,7 +484,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backpackLoader: {fileID: 11400000, guid: 7147de7a556434841bd9ba0e2c9b0e02, type: 2}
-  backPack: {fileID: 0}
+  playerBehaviour: {fileID: 0}
+  playerBackpackBehaviour: {fileID: 0}
 --- !u!114 &875000826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,8 +498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backpackSaver: {fileID: 11400000, guid: 1b9147b00eb416b4eb4cc1c6932ca2cb, type: 2}
-  playerBackpack: {fileID: 0}
-  fileName: default-backpack
+  playerBehaviour: {fileID: 0}
+  playerBackpackBehaviour: {fileID: 0}
 --- !u!1 &1417108964
 GameObject:
   m_ObjectHideFlags: 0

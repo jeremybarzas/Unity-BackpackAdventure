@@ -19,11 +19,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4625398344767472}
-  - component: {fileID: 114221218911656328}
   - component: {fileID: 33051303942944536}
   - component: {fileID: 23612981328940828}
   - component: {fileID: 135949361282908274}
   - component: {fileID: 54409145251178430}
+  - component: {fileID: 114221218911656328}
   m_Layer: 0
   m_Name: Health Potion
   m_TagString: Health Potion
