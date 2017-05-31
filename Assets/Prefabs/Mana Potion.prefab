@@ -19,11 +19,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4166707644293252}
-  - component: {fileID: 114626436680434454}
   - component: {fileID: 33506599248537108}
   - component: {fileID: 23340831818075302}
   - component: {fileID: 135624234590378666}
   - component: {fileID: 54567914725277832}
+  - component: {fileID: 114626436680434454}
   m_Layer: 0
   m_Name: Mana Potion
   m_TagString: Mana Potion

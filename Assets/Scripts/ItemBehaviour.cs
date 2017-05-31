@@ -7,6 +7,10 @@ public class ItemBehaviour : MonoBehaviour
     public Item config_item;
     public Item runtime_item;
     public static ItemPickedUp itemPickedUp = new ItemPickedUp();
+
+    private bool playerContact;
+    private BackpackBehaviour bp;
+
     void Start()
     {
         SetItem(config_item);
@@ -16,20 +20,41 @@ public class ItemBehaviour : MonoBehaviour
         runtime_item = Instantiate(item);
     }
     void OnTriggerEnter(Collider other)
-    {  
+    {
         if(other.gameObject.CompareTag("Player"))
         {
-            var bp = other.gameObject.GetComponent<BackpackBehaviour>();
-            if(bp)
+            playerContact = true;
+            bp = other.gameObject.GetComponent<BackpackBehaviour>();                       
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        playerContact = false;        
+    }
+
+    void PickupItem()
+    {
+        if (playerContact)
+        {
+            if (bp)
             {
-                bool added = bp.AddItem(runtime_item);
-                if (added == true)
+                if (Input.GetKeyDown(KeyCode.F))
                 {
-                    Debug.Log("You picked up " + config_item.itemName + ".");
-                    itemPickedUp.Invoke(runtime_item);
-                    Destroy(gameObject);
+                    bool added = bp.AddItem(runtime_item);
+                    if (added == true)
+                    {
+                        Debug.Log("You picked up " + config_item.itemName + ".");
+                        itemPickedUp.Invoke(runtime_item);
+                        Destroy(gameObject);
+                    }
                 }
             }
         }
+    }
+
+    void Update()
+    {
+        PickupItem();
     }
 }
