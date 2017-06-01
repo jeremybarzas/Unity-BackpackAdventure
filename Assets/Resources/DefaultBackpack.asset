@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918213c2769e52742bc3d1ed7008642d, type: 3}
   m_Name: DefaultBackpack
   m_EditorClassIdentifier: 
-  capacity: 12
+  capacity: 10
   contents:
   - {fileID: 11400000, guid: 491649ff70a258f48afb98a527f9b0dd, type: 2}
   - {fileID: 11400000, guid: 7f91a71b70da28c43ae001e24fd07303, type: 2}

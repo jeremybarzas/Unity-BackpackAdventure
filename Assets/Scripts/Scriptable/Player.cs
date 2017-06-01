@@ -1,16 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Character/Player")]
 public class Player : ScriptableObject
 {
-    [System.Serializable]
+    public PlayerInfo stats;
+
+    [Serializable]
     public class PlayerInfo
     {
-        public string playerName;
         public int health;
+        public string playerName;
         public float speed;
     }
-    public PlayerInfo stats;
 }

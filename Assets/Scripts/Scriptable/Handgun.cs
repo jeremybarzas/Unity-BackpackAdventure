@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(menuName ="Weapon/Handgun")]
-
+[CreateAssetMenu(menuName = "Weapon/Handgun")]
 public class Handgun : Weapon
-{    
-
+{
 }

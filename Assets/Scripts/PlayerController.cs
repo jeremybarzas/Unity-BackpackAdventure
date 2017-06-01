@@ -1,41 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    void Update ()
+    private void Update()
     {
         CharacterMove();
-        DropItemFromBackpack();   
-	}
+        DropItemFromBackpack();
+    }
 
-    void CharacterMove()
+    private void CharacterMove()
     {
-        float speed = 5.0f;
-        if(Input.GetKey(KeyCode.LeftShift))
-        {
+        var speed = 5.0f;
+        if (Input.GetKey(KeyCode.LeftShift))
             speed *= 2;
-        }
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
         var z = Input.GetAxis("Vertical") * Time.deltaTime * speed;
         transform.Rotate(0, x, 0);
         transform.Translate(0, 0, z);
     }
 
-    void DropItemFromBackpack()
+    private void DropItemFromBackpack()
     {
         var bp = GetComponent<BackpackBehaviour>();
-        
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (bp.backpackRuntime.contents.Count == 0)
             {
                 Debug.Log("The backpack is empty.");
                 return;
             }
-            Item item = bp.backpackRuntime.contents[bp.backpackRuntime.contents.Count - 1];
+            var item = bp.backpackRuntime.contents[bp.backpackRuntime.contents.Count - 1];
             bp.RemoveItem(item);
         }
-    } 
+    }
 }

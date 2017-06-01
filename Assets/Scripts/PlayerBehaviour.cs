@@ -1,17 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    public Player playerConfig;
     public static OnPlayerLoaded onPlayerLoaded = new OnPlayerLoaded();
+    public Player playerConfig;
 
-	void Start ()
-    {        
+    private void Start()
+    {
         onPlayerLoaded.Invoke(this);
-	}
-    
-    public class OnPlayerLoaded : UnityEvent<PlayerBehaviour> {}
+    }
+
+    public class OnPlayerLoaded : UnityEvent<PlayerBehaviour>
+    {
+    }
 }
