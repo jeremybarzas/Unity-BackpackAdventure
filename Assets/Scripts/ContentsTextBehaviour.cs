@@ -25,9 +25,12 @@ public class ContentsTextBehaviour : MonoBehaviour
 
     private void SetText(Backpack value)
     {
-        var text = "Backpack Contents\n\n";
-        value.contents.ForEach(item => text += item.itemName + "\n");
-        text += "\n";
-        label.text = text;
+        var text1 = "Backpack Capcity: " + value.capacity;
+        var text2 = "\nItem Count: " + value.contents.Count;
+        var text3 = "\n\nCurrent Contents:\n\n";
+        var text4 = "";
+        value.contents.ForEach(item => text4 += item.itemName + "\n");
+        text4 += "\n";
+        label.text = text1 + text2 + text3 + text4;
     }
 }

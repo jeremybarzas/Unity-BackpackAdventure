@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         var bp = GetComponent<BackpackBehaviour>();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (bp.backpackRuntime.contents.Count == 0)
             {

@@ -37,7 +37,7 @@ public class ItemBehaviour : MonoBehaviour
     {
         if (playerContact)
             if (bp)
-                if (Input.GetKeyDown(KeyCode.F))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     var added = bp.AddItem(runtime_item);
                     if (added)
