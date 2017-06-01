@@ -14,7 +14,7 @@ MonoBehaviour:
   itemID: 
   itemName: Longsword
   typeName: 
-  atkDmg: 10
+  atkDmg: 0
   atkSpd: 0
   critChance: 0
   critPercentage: 0
