@@ -3,18 +3,18 @@ using UnityEngine.UI;
 
 public class ContentsTextBehaviour : MonoBehaviour
 {
-    private Text label;
+    public Text label;
     private Backpack playerBackpack;
 
     private void Start()
-    {
-        label = GetComponent<Text>();
+    {        
         playerBackpack = FindObjectOfType<BackpackBehaviour>().backpackRuntime;
         SetText(playerBackpack);
     }
 
     private void Awake()
     {
+        label = GetComponent<Text>();
         BackpackBehaviour.onBackPackChange.AddListener(SetText);
     }
 
